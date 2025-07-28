@@ -13,7 +13,7 @@ const PRELOAD_IMAGES = [
   'https://images.unsplash.com/photo-1518709268805-4e9042af9f23',
   'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40',
   // Home page carousel images
-  'https://ibb.co/8Lh1QbTJ',
+  'https://bolt.new/api/upload/files%2F1969447-1753710682363-oak-terminal-1.png.png',
   'https://ibb.co/YB68FdNS',
   'https://ibb.co/6RdbKZFC',
   'https://ibb.co/6RdbKZFC'
