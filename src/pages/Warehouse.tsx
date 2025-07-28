@@ -43,7 +43,7 @@ function Warehouse() {
             Oakmar Terminal LLC (OM.TLLC) operates as an advanced multi-modal logistics and procurement services company with over 15 years of experience in international trade and logistics. We specialize in providing complete supply management solutions through our global network, serving heavy industries including energy, oil and gas, mining, construction, automotive and aerospace.
           </p>
         </div>
-
+        
         {/* Logistics Services Section */}
         <div className="bg-gray-50 rounded-xl p-12 mb-20">
           <h2 className="text-3xl font-bold mb-8">Comprehensive Logistics Services</h2>
