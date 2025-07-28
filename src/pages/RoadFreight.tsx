@@ -48,7 +48,7 @@ function OceanFreight() {
             <h2 className="text-3xl font-bold mb-6">Ocean Freight</h2>
             <h2 className="text-3xl font-bold mb-6">Road Freight</h2>
             <p className="text-gray-700 mb-4">
-              MIKKY provides comprehensive road freight solutions across North America and Europe. Our extensive network of trusted carriers and advanced logistics management ensures your cargo reaches its destination safely and on time.
+              OM.TLLLC provides comprehensive road freight solutions across North America and Europe. Our extensive network of trusted carriers and advanced logistics management ensures your cargo reaches its destination safely and on time.
             </p>
             <p className="text-gray-700 mb-4">
               With real-time tracking, flexible scheduling, and specialized equipment for various cargo types, we deliver tailored road transport solutions that meet your specific requirements and budget.

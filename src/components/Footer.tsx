@@ -19,7 +19,9 @@ function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" className="block">
-              <h2 className={`text-3xl font-bold ${iconColor}`}>O.Tllc</h2>
+              <h2 className={`text-3xl font-bold ${iconColor}`}>
+                <span className="text-4xl">O</span>M.TLLLC
+              </h2>
             </Link>
             <p className={`${mutedTextColor} text-sm leading-relaxed`}>
               Oakmar Terminal LLC - A major petroleum tank farm storage company and leading international liquid bulk storage provider. We operate 32 petroleum storage terminals with 497 tanks across Houston, Rotterdam, and major ports worldwide, serving the energy transition with innovative logistics solutions.
@@ -92,7 +94,7 @@ function Footer() {
               <li className="flex items-center space-x-3">
                 <Mail className={`w-5 h-5 ${iconColor}`} />
                 <a href="mailto:info@mikky.com" className={`${mutedTextColor} ${hoverTextColor} transition-colors`}>
-                  Oakmar-terminalllc.com
+                  info@om-tlllc.com
                 </a>
               </li>
             </ul>
@@ -103,7 +105,7 @@ function Footer() {
         <div className="mt-8 pt-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className={mutedTextColor}>
-              © {new Date().getFullYear()} O.Tllc. All rights reserved.
+              © {new Date().getFullYear()} OM.TLLLC. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link to="/privacy" className={`${mutedTextColor} ${hoverTextColor} text-sm transition-colors`}>

@@ -23,7 +23,9 @@ function Navigation() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className={`text-2xl font-bold ${brandColor}`}>MIKKY</Link>
+            <Link to="/" className={`text-2xl font-bold ${brandColor}`}>
+              <span className="text-3xl">O</span>M.TLLLC
+            </Link>
           </div>
 
           {/* Theme Toggle and Mobile Menu Button */}
@@ -68,7 +70,9 @@ function Navigation() {
       {isMenuOpen && (
         <div className={`fixed inset-0 ${mobileMenuBg} z-40 md:hidden transition-colors duration-300`}>
           <div className="flex justify-between items-center p-4">
-            <Link to="/" className={`text-2xl font-bold ${brandColor}`}>MIKKY</Link>
+            <Link to="/" className={`text-2xl font-bold ${brandColor}`}>
+              <span className="text-3xl">O</span>M.TLLLC
+            </Link>
             <button
               onClick={closeMenu}
               className={`${textColor} ${hoverTextColor} focus:outline-none`}

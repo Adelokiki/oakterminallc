@@ -35,10 +35,10 @@ function RailTransport() {
           <div>
             <h2 className="text-3xl font-bold mb-6">Rail Transport</h2>
             <p className="text-gray-700 mb-4">
-              MIKKY offers universal services for the transport of goods by rail throughout the USA in trains (including baggage cars), gondola cars, and ISO containers. We also work with railway operators to provide access to the USA and Europe by rail for companies and producers in Europe.
+              OM.TLLLC offers universal services for the transport of goods by rail throughout the USA in trains (including baggage cars), gondola cars, and ISO containers. We also work with railway operators to provide access to the USA and Europe by rail for companies and producers in Europe.
             </p>
             <p className="text-gray-700">
-              Rail transport can be ordered as a separate service or integrated into the multimodal supply chain. The long-term relationships and direct contracts with European railway structures enable MIKKY to exercise the advantages of the first forwarder and to make competitive offers for rail freight from the USA to European countries.
+              Rail transport can be ordered as a separate service or integrated into the multimodal supply chain. The long-term relationships and direct contracts with European railway structures enable OM.TLLLC to exercise the advantages of the first forwarder and to make competitive offers for rail freight from the USA to European countries.
             </p>
           </div>
           <div>
@@ -56,7 +56,7 @@ function RailTransport() {
             <Train className="w-12 h-12 text-blue-900 mb-6" />
             <h3 className="text-xl font-bold mb-4">Solutions Linked to Railway Services</h3>
             <p className="text-gray-600">
-              MIKKY Logistics offers inland rail transport services in the USA and Europe, based on its extensive worldwide networks. MIKKY Logistics also offers high-quality services and competitive prices based on the know-how it has built for years.
+              OM.TLLLC Logistics offers inland rail transport services in the USA and Europe, based on its extensive worldwide networks. OM.TLLLC Logistics also offers high-quality services and competitive prices based on the know-how it has built for years.
             </p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-8">
