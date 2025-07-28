@@ -16,7 +16,7 @@ const PRELOAD_IMAGES = [
   'https://bolt.new/api/upload/files%2F1969447-1753710682363-oak-terminal-1.png.png',
   'https://bolt.new/api/upload/files%2F1969447-1753710683034-oak-terminal-2.png.png',
   'https://bolt.new/api/upload/files%2F1969447-1753710682586-oak-terminal-3.png.png',
-  'https://ibb.co/6RdbKZFC'
+  'https://bolt.new/api/upload/files%2F1969447-1753710682513-oak-terminal-5.png.png'
 ].map(url => `${url}?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80`);
 
 function ImagePreloader() {
