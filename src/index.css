@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply transition-colors duration-200;
+  }
+
+  .dark body {
+    @apply bg-gray-900 text-white;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .page-container {
+    @apply min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200;
+  }
+
+  .section-container {
+    @apply bg-gray-50 dark:bg-gray-800 transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-colors duration-200;
+  }
+
+  .heading-primary {
+    @apply text-gray-900 dark:text-white transition-colors duration-200;
+  }
+
+  .text-primary {
+    @apply text-gray-700 dark:text-gray-300 transition-colors duration-200;
+  }
+
+  .text-secondary {
+    @apply text-gray-600 dark:text-gray-400 transition-colors duration-200;
+  }
+
+  .button-primary {
+    @apply bg-blue-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-800 transition duration-300;
+  }
+}
