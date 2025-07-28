@@ -11,7 +11,7 @@ function Home() {
   const images = [
     'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%202.png',
     'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%203.png',
-    'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%204.png',
+    'https://bolt.new/api/upload/files%2F1969447-1753710683034-oak-terminal-2.png.png',
     'https://bolt.new/api/upload/files%2F1969447-1753710682363-oak-terminal-1.png.png'
   ];
 
