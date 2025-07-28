@@ -48,13 +48,13 @@ function OceanFreight() {
           <div>
             <h2 className="text-3xl font-bold mb-6">Ocean Freight</h2>
             <p className="text-gray-700 mb-4">
-              OM.TLLLC is one of the largest global freight forwarders operating within a worldwide network. Tailor-made solutions for your specific ocean freight requirements form the core of our services.
+              OM.TLLC is one of the largest global freight forwarders operating within a worldwide network. Tailor-made solutions for your specific ocean freight requirements form the core of our services.
             </p>
             <p className="text-gray-700 mb-4">
               Our extensive and long-standing relationships with shipping companies mean that we can provide you with access to a global carrier portfolio covering key ports, with the best transit times, fully flexible planning, and space protection agreements to meet your individual shipping needs.
             </p>
             <p className="text-gray-700">
-              OM.TLLLC can offer a flexible range of ocean freight and ocean freight services for both Less-than-Container Load (LCL) and Full-Container Load (FCL) shipments. These are supported by extensive sea and ocean freight management services and breakbulk, project forwarding, partial, and full charter services.
+              OM.TLLC can offer a flexible range of ocean freight and ocean freight services for both Less-than-Container Load (LCL) and Full-Container Load (FCL) shipments. These are supported by extensive sea and ocean freight management services and breakbulk, project forwarding, partial, and full charter services.
             </p>
           </div>
         </div>

@@ -40,7 +40,7 @@ function Warehouse() {
         <div className="text-center mb-20">
           <h2 className="text-4xl font-bold mb-8">Leading Logistics Solutions Provider</h2>
           <p className="text-gray-700 max-w-4xl mx-auto">
-            Oakmar Terminal LLC operates as an advanced multi-modal logistics and procurement services company with over 15 years of experience in international trade and logistics. We specialize in providing complete supply management solutions through our global network, serving heavy industries including energy, oil and gas, mining, construction, automotive and aerospace.
+            Oakmar Terminal LLC (OM.TLLC) operates as an advanced multi-modal logistics and procurement services company with over 15 years of experience in international trade and logistics. We specialize in providing complete supply management solutions through our global network, serving heavy industries including energy, oil and gas, mining, construction, automotive and aerospace.
           </p>
         </div>
 

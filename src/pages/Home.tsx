@@ -161,7 +161,7 @@ function Home() {
             <div>
               <h2 className={`text-4xl font-bold mb-6 ${textColor}`}>About OM.TLLC</h2>
               <p className={`${mutedTextColor} mb-6 text-lg leading-relaxed`}>
-                Oakmar Terminal LLC is a major petroleum tank farm storage company and leading international liquid bulk storage provider. We form an integral part of our customers' supply chains, providing essential infrastructure and innovative services in transporting products from areas of supply to areas of demand.
+                Oakmar Terminal LLC (OM.TLLC) is a major petroleum tank farm storage company and leading international liquid bulk storage provider. We form an integral part of our customers' supply chains, providing essential infrastructure and innovative services in transporting products from areas of supply to areas of demand.
               </p>
               <p className={`${mutedTextColor} mb-8 text-lg leading-relaxed`}>
                 With over 15 years of experience in international trade and logistics, we operate 32 petroleum storage terminals with 497 tanks across Houston, Rotterdam, and major ports worldwide. Our strategic partnerships with key industry players enable us to enhance capacity for storage and efficient trans-shipment of oil cargo.
