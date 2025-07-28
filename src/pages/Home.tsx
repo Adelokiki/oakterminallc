@@ -9,11 +9,11 @@ function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    '/images/oak-terminal-1.png',
-    '/images/oak-terminal-2.png',
-    '/images/oak-terminal-3.png',
-    '/images/oak-terminal-4.jpeg',
-    '/images/oak-terminal-5.png'
+    'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
+    'https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
+    'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
+    'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
+    'https://images.unsplash.com/photo-1564182842519-8a3b2af3e228?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'
   ];
 
   useEffect(() => {
