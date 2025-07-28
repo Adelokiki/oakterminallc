@@ -14,7 +14,7 @@ const PRELOAD_IMAGES = [
   'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40',
   // Home page carousel images
   'https://bolt.new/api/upload/files%2F1969447-1753710682363-oak-terminal-1.png.png',
-  'https://ibb.co/YB68FdNS',
+  'https://bolt.new/api/upload/files%2F1969447-1753710683034-oak-terminal-2.png.png',
   'https://ibb.co/6RdbKZFC',
   'https://ibb.co/6RdbKZFC'
 ].map(url => `${url}?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80`);
