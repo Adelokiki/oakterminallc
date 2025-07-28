@@ -9,10 +9,11 @@ function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%202.png',
-    'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%203.png',
-    'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%204.png',
-    'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%205.jpeg'
+    '/images/oak-terminal-1.png',
+    '/images/oak-terminal-2.png',
+    '/images/oak-terminal-3.png',
+    '/images/oak-terminal-4.jpeg',
+    '/images/oak-terminal-5.png'
   ];
 
   useEffect(() => {
