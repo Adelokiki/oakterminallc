@@ -15,7 +15,7 @@ function OceanFreight() {
         className="relative flex content-center items-center justify-center"
         style={{
           minHeight: "80vh",
-          backgroundImage: "url('https://ibb.co/6RdbKZFC')",
+          backgroundImage: "url('https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%205.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed"
