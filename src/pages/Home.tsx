@@ -9,10 +9,10 @@ function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    'https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCUDRUamdFPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--ff55f3a63d5161248921c49a68bd0a18bf293ebb//oak-terminal-1.png.jpg',
-    'https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCUDRUamdFPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--ff55f3a63d5161248921c49a68bd0a18bf293ebb//oak-terminal-1.png.jpg',
-    'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%204.png',
-    'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%205.jpeg'
+    '/oak-terminal-1.png.jpg',
+    '/oak-terminal-2.png.jpg',
+    '/oak-terminal-3.png.jpg',
+    '/oak-terminal-4.png.jpg'
   ];
 
   useEffect(() => {

@@ -15,7 +15,7 @@ function OceanFreight() {
         className="relative flex content-center items-center justify-center"
         style={{
           minHeight: "80vh",
-          backgroundImage: "url('/images/tank-terminal-hero.jpg')",
+          backgroundImage: "url('/oak-terminal-1.png.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed"
@@ -39,7 +39,7 @@ function OceanFreight() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div>
             <img 
-              src="/images/tank-terminal-hero.jpg"
+              src="/oak-terminal-2.png.jpg"
               alt="Tank Terminal Facilities"
               className="rounded-lg shadow-lg w-full h-96 object-cover"
             />

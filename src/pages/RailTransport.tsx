@@ -9,7 +9,7 @@ function RailTransport() {
         className="relative flex content-center items-center justify-center"
         style={{
           minHeight: "80vh",
-          backgroundImage: "url('https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/Screenshot%202025-07-28%20131237.png')",
+          backgroundImage: "url('/oak-terminal-9.png.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed"
