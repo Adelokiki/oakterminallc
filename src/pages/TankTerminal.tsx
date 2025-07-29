@@ -15,7 +15,7 @@ function OceanFreight() {
         className="relative flex content-center items-center justify-center"
         style={{
           minHeight: "80vh",
-          backgroundImage: "url('https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%208.png')",
+          backgroundImage: "url('/images/tank-terminal-hero.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed"
@@ -39,8 +39,7 @@ function OceanFreight() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div>
             <img 
-              src="https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%20TANK%20FARM.png"
-              alt="Ocean Freight Services"
+              src="/images/tank-terminal-hero.jpg"
               alt="Tank Terminal Facilities"
               className="rounded-lg shadow-lg w-full h-96 object-cover"
             />
