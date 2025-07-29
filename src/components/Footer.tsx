@@ -19,8 +19,8 @@ function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" className="block">
-              <h2 className={`text-3xl font-bold ${iconColor}`}>
-                <span className="text-4xl">O</span>M.TLLC
+              <h2 className={`text-2xl font-bold ${iconColor}`}>
+                Oakmar Terminal
               </h2>
             </Link>
             <p className={`${mutedTextColor} text-sm leading-relaxed`}>
@@ -105,7 +105,7 @@ function Footer() {
         <div className="mt-8 pt-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className={mutedTextColor}>
-              © {new Date().getFullYear()} OM.TLLC. All rights reserved.
+              © {new Date().getFullYear()} Oakmar Terminal. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link to="/privacy" className={`${mutedTextColor} ${hoverTextColor} text-sm transition-colors`}>

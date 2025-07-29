@@ -64,7 +64,7 @@ function Contact() {
           <div className="container relative mx-auto px-4 text-center">
             <h1 className="text-6xl font-bold text-white mb-4">Contact Us</h1>
             <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-              Get in touch with our team for inquiries about our OM.TLLC shipping services
+              Get in touch with our team for inquiries about our Oakmar Terminal shipping services
             </p>
           </div>
         </div>
@@ -94,8 +94,8 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className={`font-semibold text-lg ${textColor}`}>Email</h3>
-                  <p className={mutedTextColor}>info@om-tllc.com</p>
-                  <p className={mutedTextColor}>support@om-tllc.com</p>
+                  <p className={mutedTextColor}>info@oakmarterminal.com</p>
+                  <p className={mutedTextColor}>support@oakmarterminal.com</p>
                 </div>
               </div>
 

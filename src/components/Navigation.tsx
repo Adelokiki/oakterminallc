@@ -23,8 +23,8 @@ function Navigation() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className={`text-2xl font-bold ${brandColor}`}>
-              <span className="text-3xl">O</span>M.TLLC
+            <Link to="/" className={`text-xl font-bold ${brandColor}`}>
+              Oakmar Terminal
             </Link>
           </div>
 

@@ -48,7 +48,7 @@ function OceanFreight() {
           <div>
             <h2 className="text-3xl font-bold mb-6">Tank Terminal Services</h2>
             <p className="text-gray-700 mb-4">
-              Oakmar Terminal LLC (OM.TLLC) is a major petroleum tank farm storage company located in Missouri, USA. We operate 32 petroleum storage terminals with a total of 497 tanks across Houston, Rotterdam, and major international ports, providing comprehensive storage and handling services for petroleum and petrochemical products.
+              Oakmar Terminal LLC is a major petroleum tank farm storage company located in Missouri, USA. We operate 32 petroleum storage terminals with a total of 497 tanks across Houston, Rotterdam, and major international ports, providing comprehensive storage and handling services for petroleum and petrochemical products.
             </p>
             <p className="text-gray-700 mb-4">
               Our terminals range from small gathering sites to large corporation storage units, with tanks ranging in size from 40 to 60 feet high and 150 to 270 feet in diameter, holding anywhere from 57,000 to 575,000 barrels of petroleum products. The size of each tank is determined by the design requirements of pipeline and refinery customers.

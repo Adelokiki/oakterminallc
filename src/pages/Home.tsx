@@ -159,7 +159,7 @@ function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className={`text-4xl font-bold mb-6 ${textColor}`}>About OM.TLLC</h2>
+              <h2 className={`text-4xl font-bold mb-6 ${textColor}`}>About Oakmar Terminal</h2>
               <p className={`${mutedTextColor} mb-6 text-lg leading-relaxed`}>
                 Oakmar Terminal LLC (OM.TLLC) is a major petroleum tank farm storage company and leading international liquid bulk storage provider. We form an integral part of our customers' supply chains, providing essential infrastructure and innovative services in transporting products from areas of supply to areas of demand.
               </p>
