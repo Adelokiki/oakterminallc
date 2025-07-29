@@ -1,11 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Ship, Truck, Train, Warehouse as WarehouseIcon, Tangent as Tank, Shield } from 'lucide-react';
+import { Ship, Truck, Train, Warehouse as WarehouseIcon, Tangent as Tank, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
 import WelcomeMessage from '../components/WelcomeMessage';
 import { useTheme } from '../context/ThemeContext';
 
 function Home() {
   const { isDarkMode } = useTheme();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = [
+    'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%202.png',
+    'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%203.png',
+    'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%204.png',
+    'https://raw.githubusercontent.com/Adelokiki/tank-oil/refs/heads/main/OAK%20TERMINAL%205.jpeg'
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
 
   const bgColor = isDarkMode ? 'bg-gray-900' : 'bg-white';
   const textColor = isDarkMode ? 'text-white' : 'text-gray-900';
@@ -14,14 +38,54 @@ function Home() {
 
   return (
     <div className={`min-h-screen ${bgColor} transition-colors duration-300`}>
-      {/* Hero Section */}
-      <div className={`relative h-screen flex items-center justify-center ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'} transition-colors duration-300`}>
-        <WelcomeMessage />
+      {/* Hero Section with Image Carousel */}
+      <div className="relative h-screen overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('${images[currentImageIndex]}')`
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
+        </div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevImage}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-all duration-300 z-10"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        <button
+          onClick={nextImage}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-all duration-300 z-10"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+
+        {/* Image Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Welcome Message Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <WelcomeMessage />
+        </div>
       </div>
 
-      {/* Services Grid */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
+      {/* Services Section */}
+      <div className="container mx-auto px-4 py-20">
+        <div className="text-center mb-16">
+          <h2 className={`text-4xl font-bold mb-4 ${textColor}`}>Our Services</h2>
           <p className={`text-xl ${mutedTextColor} max-w-3xl mx-auto`}>
             Comprehensive logistics solutions tailored to meet your global shipping and storage needs
           </p>
