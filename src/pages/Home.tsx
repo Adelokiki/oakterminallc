@@ -177,7 +177,7 @@ function Home() {
             </div>
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+                src="/oak-terminal-10.png.jpg"
                 alt="Logistics Operations"
                 className="rounded-lg shadow-xl w-full h-96 object-cover"
               />
