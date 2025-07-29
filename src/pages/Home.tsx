@@ -22,6 +22,12 @@ function Home() {
       {/* Services Grid */}
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
+        <WelcomeMessage />
+      </div>
+
+      {/* Services Grid */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="text-center mb-12">
           <p className={`text-xl ${mutedTextColor} max-w-3xl mx-auto`}>
             Comprehensive logistics solutions tailored to meet your global shipping and storage needs
           </p>
