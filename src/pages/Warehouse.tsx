@@ -15,7 +15,7 @@ function Warehouse() {
         className="relative flex content-center items-center justify-center"
         style={{
           minHeight: "80vh",
-          backgroundImage: "url('https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80')",
+          backgroundImage: "url('/oak-terminal-12.png.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed"
@@ -103,7 +103,7 @@ function Warehouse() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              src="/oak-terminal-13.png.jpg"
               alt="Warehouse Interior"
               className="rounded-lg shadow-lg w-full h-96 object-cover transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
             />
