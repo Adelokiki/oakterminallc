@@ -13,21 +13,21 @@ function HSEQ() {
 
   const images = {
     safety: [
-      'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
-      'https://images.unsplash.com/photo-1564182842519-8a3b2af3e228?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
-      'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'
+      '/oak-terminal-14.png.jpg',
+      '/oak-terminal-16.png.jpg',
+      '/oak-terminal-1.png.jpg'
     ],
     health: [
-      'https://images.unsplash.com/photo-1504813184591-01572f98c85f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
-      'https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'
+      '/oak-terminal-2.png.jpg',
+      '/oak-terminal-3.png.jpg'
     ],
     environment: [
-      'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
-      'https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'
+      '/oak-terminal-4.png.jpg',
+      '/oak-terminal-5.png.jpg'
     ],
     quality: [
-      'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
-      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'
+      '/oak-terminal-7.png.jpg',
+      '/oak-terminal-8.png.jpg'
     ]
   };
 

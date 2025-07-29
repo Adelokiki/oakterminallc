@@ -55,7 +55,7 @@ function Contact() {
           className="relative flex content-center items-center justify-center"
           style={{
             minHeight: "60vh",
-            backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80')",
+            backgroundImage: "url('/oak-terminal-9.png.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center"
           }}
