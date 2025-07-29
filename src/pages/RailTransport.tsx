@@ -43,7 +43,7 @@ function RailTransport() {
           </div>
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1535535112387-56ffe8db21ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+              src="/oak-terminal-11.png.jpg"
               alt="Rail Transport"
               className="rounded-lg shadow-lg w-full h-96 object-cover"
             />
