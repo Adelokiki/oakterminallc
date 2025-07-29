@@ -15,9 +15,13 @@ function OceanFreight() {
         className="relative flex content-center items-center justify-center"
         style={{
           minHeight: "80vh",
+          backgroundImage: "url('/images/tank-terminal-hero.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed"
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 via-blue-900/50 to-blue-900/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
         <div className="container relative mx-auto px-4">
           <div className="items-center flex flex-wrap">
             <div className="w-full lg:w-6/12 mx-auto text-center">
@@ -33,6 +37,13 @@ function OceanFreight() {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div>
+            <img 
+              src="/images/tank-terminal-hero.jpg"
+              alt="Tank Terminal Facilities"
+              className="rounded-lg shadow-lg w-full h-96 object-cover"
+            />
+          </div>
           <div>
             <h2 className="text-3xl font-bold mb-6">Tank Terminal Services</h2>
             <p className="text-gray-700 mb-4">
