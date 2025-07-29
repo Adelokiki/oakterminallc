@@ -124,11 +124,11 @@ function Contact() {
 
             {/* Map */}
             <div className="mt-12">
-              <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-gray-200'} w-full h-64 rounded-lg transition-colors duration-300`}>
-                <div className="w-full h-full flex items-center justify-center text-gray-500">
-                  Map Integration
-                </div>
-              </div>
+              <img 
+                src="/oak-terminal-16.png.jpg"
+                alt="Oakmar Terminal Location"
+                className="w-full h-64 rounded-lg object-cover shadow-lg"
+              />
             </div>
           </div>
 
