@@ -16,15 +16,6 @@ function Home() {
     <div className={`min-h-screen ${bgColor} transition-colors duration-300`}>
       {/* Hero Section */}
       <div className={`relative h-screen flex items-center justify-center ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'} transition-colors duration-300`}>
-        <div className="container mx-auto px-4 text-center">
-          <WelcomeMessage />
-        </div>
-      </div>
-
-      {/* Services Section */}
-      <div className="container mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <h2 className={`text-4xl font-bold mb-4 ${textColor}`}>Our Services</h2>
           <p className={`text-xl ${mutedTextColor} max-w-3xl mx-auto`}>
             Comprehensive logistics solutions tailored to meet your global shipping and storage needs
           </p>
