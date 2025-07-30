@@ -83,8 +83,7 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className={`font-semibold text-lg ${textColor}`}>Phone</h3>
-                  <p className={mutedTextColor}>+1 (555) 123-4567</p>
-                  <p className={mutedTextColor}>+1 (555) 987-6543</p>
+                  <p className={mutedTextColor}>+31 10 899 0688 (Netherlands)</p>
                 </div>
               </div>
 

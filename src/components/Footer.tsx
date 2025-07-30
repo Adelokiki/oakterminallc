@@ -87,8 +87,7 @@ function Footer() {
               <li className="flex items-center space-x-3">
                 <Phone className={`w-5 h-5 ${iconColor}`} />
                 <div className={mutedTextColor}>
-                  <p>Rotterdam: +1 (555) 123-4567</p>
-                  <p>Houston: +1 (555) 987-6543</p>
+                  <p>Netherlands: +31 10 899 0688</p>
                 </div>
               </li>
               <li className="flex items-center space-x-3">
