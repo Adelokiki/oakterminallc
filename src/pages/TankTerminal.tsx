@@ -39,7 +39,7 @@ function OceanFreight() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div>
             <img 
-              src="/oak-terminal-2.png.jpg"
+              src="/oak-terminal-3.png.jpg"
               alt="Tank Terminal Facilities"
               className="rounded-lg shadow-lg w-full h-96 object-cover"
             />
