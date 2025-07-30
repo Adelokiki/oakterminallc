@@ -15,7 +15,7 @@ function OceanFreight() {
         className="relative flex content-center items-center justify-center"
         style={{
           minHeight: "80vh",
-          backgroundImage: "url('/oak-terminal-1.png.jpg')",
+          backgroundImage: "url('/oak-terminal-13.png.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed"
