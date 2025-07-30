@@ -92,8 +92,8 @@ function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className={`w-5 h-5 ${iconColor}`} />
-                <a href="mailto:info@mikky.com" className={`${mutedTextColor} ${hoverTextColor} transition-colors`}>
-                  info@om-tlllc.com
+                <a href="mailto:info@oakmarterminal.com" className={`${mutedTextColor} ${hoverTextColor} transition-colors`}>
+                  info@oakmarterminal.com
                 </a>
               </li>
             </ul>
