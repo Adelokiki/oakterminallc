@@ -141,7 +141,23 @@ function Contact() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form 
+              name="contact" 
+              method="POST" 
+              data-netlify="true" 
+              data-netlify-honeypot="bot-field"
+              onSubmit={handleSubmit} 
+              className="space-y-6"
+            >
+              {/* Netlify form detection */}
+              <input type="hidden" name="form-name" value="contact" />
+              {/* Honeypot field for spam protection */}
+              <div style={{ display: 'none' }}>
+                <label>
+                  Don't fill this out if you're human: <input name="bot-field" />
+                </label>
+              </div>
+
               <div>
                 <label htmlFor="name" className={`block text-sm font-medium ${mutedTextColor} mb-1`}>
                   Full Name *
