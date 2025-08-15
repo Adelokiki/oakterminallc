@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import emailjs from 'emailjs-com';
 
 function Contact() {
   const { isDarkMode } = useTheme();
@@ -13,6 +14,7 @@ function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -22,12 +24,29 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    
-    setTimeout(() => {
+    setIsSubmitting(true);
+
+    try {
+      // EmailJS configuration - you'll need to replace these with your actual values
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'info@oakmar-terminalllc.com'
+      };
+
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        templateParams,
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+
+      setSubmitted(true);
       setFormData({
         name: '',
         email: '',
@@ -35,8 +54,17 @@ function Contact() {
         subject: '',
         message: ''
       });
-      setSubmitted(false);
-    }, 3000);
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      alert('Failed to send message. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const bgColor = isDarkMode ? 'bg-gray-900' : 'bg-white';
@@ -142,22 +170,9 @@ function Contact() {
             )}
 
             <form 
-              name="contact" 
-              method="POST" 
-              data-netlify="true" 
-              data-netlify-honeypot="bot-field"
               onSubmit={handleSubmit} 
               className="space-y-6"
             >
-              {/* Netlify form detection */}
-              <input type="hidden" name="form-name" value="contact" />
-              {/* Honeypot field for spam protection */}
-              <div style={{ display: 'none' }}>
-                <label>
-                  Don't fill this out if you're human: <input name="bot-field" />
-                </label>
-              </div>
-
               <div>
                 <label htmlFor="name" className={`block text-sm font-medium ${mutedTextColor} mb-1`}>
                   Full Name *
@@ -240,10 +255,15 @@ function Contact() {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center space-x-2 bg-blue-900 text-white py-3 px-6 rounded-lg hover:bg-blue-800 transition duration-300"
+                disabled={isSubmitting}
+                className={`w-full flex items-center justify-center space-x-2 py-3 px-6 rounded-lg transition duration-300 ${
+                  isSubmitting 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : 'bg-blue-900 text-white hover:bg-blue-800'
+                }`}
               >
                 <Send className="w-5 h-5" />
-                <span>Send Message</span>
+                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
               </button>
             </form>
           </div>
