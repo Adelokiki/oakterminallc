@@ -28,23 +28,24 @@ function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // For Netlify Forms, we'll let the default form submission handle it
+    // The form will be submitted to Netlify and you'll receive notifications
+    
     try {
-      // EmailJS configuration - you'll need to replace these with your actual values
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        subject: formData.subject,
-        message: formData.message,
-        to_email: 'info@oakmar-terminalllc.com'
-      };
+      // Create FormData for Netlify
+      const netlifyFormData = new FormData();
+      netlifyFormData.append('form-name', 'contact');
+      netlifyFormData.append('name', formData.name);
+      netlifyFormData.append('email', formData.email);
+      netlifyFormData.append('phone', formData.phone);
+      netlifyFormData.append('subject', formData.subject);
+      netlifyFormData.append('message', formData.message);
 
-      await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        templateParams,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-      );
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(netlifyFormData as any).toString()
+      });
 
       setSubmitted(true);
       setFormData({
@@ -170,9 +171,21 @@ function Contact() {
             )}
 
             <form 
-              onSubmit={handleSubmit} 
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
+              {/* Hidden field for Netlify */}
+              <input type="hidden" name="form-name" value="contact" />
+              
+              {/* Honeypot field for spam protection */}
+              <div style={{ display: 'none' }}>
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </div>
+
               <div>
                 <label htmlFor="name" className={`block text-sm font-medium ${mutedTextColor} mb-1`}>
                   Full Name *
