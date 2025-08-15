@@ -93,8 +93,8 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className={`font-semibold text-lg ${textColor}`}>Email</h3>
-                  <p className={mutedTextColor}>info@oakmarterminal.com</p>
-                  <p className={mutedTextColor}>support@oakmarterminal.com</p>
+                  <p className={mutedTextColor}>info@oakmar-terminalllc.com</p>
+                  <p className={mutedTextColor}>logistics@oakmar-terminalllc.com</p>
                 </div>
               </div>
 
