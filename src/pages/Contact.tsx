@@ -39,7 +39,7 @@ function Contact() {
         phone: formData.phone || 'Not provided',
         subject: formData.subject,
         message: formData.message
-      });
+      };
 
       const response = await emailjs.send(
         emailjsConfig.serviceId,
@@ -65,7 +65,7 @@ function Contact() {
         throw new Error('Form submission failed');
       }
     } catch (error) {
-      console.error('EmailJS submission failed:', error);
+      console.error('Form submission failed:', error);
       alert('Failed to send message. Please try again or contact us directly at info@oakmar-terminalllc.com');
     } finally {
       setIsSubmitting(false);
@@ -214,7 +214,7 @@ function Contact() {
               action="/contact"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              onSubmit={handleEmailJSSubmit}
+              onSubmit={handleNetlifySubmit}
               className="space-y-6"
             >
               {/* Hidden field for Netlify */}
