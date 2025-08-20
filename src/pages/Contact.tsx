@@ -16,6 +16,7 @@ function Contact() {
 
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -25,26 +26,29 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleEmailJSSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
 
     try {
-      // Submit to Netlify Forms (which will use your Hostinger email)
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          'name': formData.name,
-          'email': formData.email,
-          'phone': formData.phone,
-          'subject': formData.subject,
-          'message': formData.message
-        }).toString()
-      });
+      // Send email directly using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || 'Not provided',
+        subject: formData.subject,
+        message: formData.message
+      };
 
-      if (response.ok) {
+      const response = await emailjs.send(
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
+        templateParams,
+        emailjsConfig.publicKey
+      );
+
+      if (response.status === 200) {
         setSubmitted(true);
         setFormData({
           name: '',
@@ -68,23 +72,28 @@ function Contact() {
     }
   };
 
-  const handleNetlifySubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+    setError('');
+
     try {
-      const response = await fetch('/', {
+      // Send email directly via Netlify function
+      const response = await fetch('/.netlify/functions/send-email', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          'name': formData.name,
-          'email': formData.email,
-          'phone': formData.phone,
-          'subject': formData.subject,
-          'message': formData.message
-        }).toString()
+        headers: { 
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message
+        })
       });
+
+      const result = await response.json();
 
       if (response.ok) {
         setSubmitted(true);
@@ -100,11 +109,11 @@ function Contact() {
           setSubmitted(false);
         }, 5000);
       } else {
-        throw new Error('Form submission failed');
+        throw new Error(result.error || 'Form submission failed');
       }
     } catch (error) {
       console.error('Form submission failed:', error);
-      alert('Failed to send message. Please try again or contact us directly at info@oakmar-terminalllc.com');
+      setError('Failed to send message. Please try again or contact us directly at info@oakmar-terminalllc.com');
     } finally {
       setIsSubmitting(false);
     }
@@ -212,22 +221,16 @@ function Contact() {
               </div>
             )}
 
+            {error && (
+              <div className={`mb-6 p-4 ${isDarkMode ? 'bg-red-900 border-red-800 text-red-200' : 'bg-red-50 border-red-100 text-red-600'} border rounded-lg transition-colors duration-300`}>
+                {error}
+              </div>
+            )}
+
             <form 
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className="space-y-6"
             >
-              {/* Hidden field for Netlify */}
-              <input type="hidden" name="form-name" value="contact" />
-              
-              {/* Honeypot field for spam protection */}
-              <div style={{ display: 'none' }}>
-                <label>Don't fill this out: <input name="bot-field" /></label>
-              </div>
-
               <div>
                 <label htmlFor="name" className={`block text-sm font-medium ${mutedTextColor} mb-1`}>
                   Full Name *
