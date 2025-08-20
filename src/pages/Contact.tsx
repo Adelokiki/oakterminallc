@@ -218,6 +218,12 @@ function Contact() {
               </div>
             )}
 
+            {error && (
+              <div className={`mb-6 p-4 ${isDarkMode ? 'bg-red-900 border-red-800 text-red-200' : 'bg-red-50 border-red-100 text-red-600'} border rounded-lg transition-colors duration-300`}>
+                {error}
+              </div>
+            )}
+
             <form 
               name="contact"
               method="POST"
