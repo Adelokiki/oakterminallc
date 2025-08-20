@@ -37,9 +37,18 @@ function Contact() {
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone || 'Not provided',
-      });
+        subject: formData.subject,
+        message: formData.message
+      };
 
-      if (response.ok) {
+      const response = await emailjs.send(
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
+        templateParams,
+        emailjsConfig.publicKey
+      );
+
+      if (response.status === 200) {
         setSubmitted(true);
         setFormData({
           name: '',
