@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Ship, Truck, Warehouse as WarehouseIcon, Tangent as Tank, Shield } from 'lucide-react';
+import { Phone, Mail, MapPin, Ship, Truck, Warehouse as WarehouseIcon, Fuel as Tank, Shield } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 function Footer() {

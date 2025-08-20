@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Ship, Truck, Train, Warehouse as WarehouseIcon, Tangent as Tank, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Ship, Truck, Train, Warehouse as WarehouseIcon, Fuel as Tank, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
 import WelcomeMessage from '../components/WelcomeMessage';
 import { useTheme } from '../context/ThemeContext';
 
