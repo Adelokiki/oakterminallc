@@ -3,8 +3,6 @@ import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import emailjs from '@emailjs/browser';
 import { emailjsConfig } from '../config/emailjs';
-import emailjs from '@emailjs/browser';
-import { emailjsConfig } from '../config/emailjs';
 
 function Contact() {
   const { isDarkMode } = useTheme();
