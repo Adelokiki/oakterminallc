@@ -39,9 +39,18 @@ function Contact() {
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone || 'Not provided',
-      });
+        subject: formData.subject,
+        message: formData.message
+      };
 
-      if (response.ok) {
+      const response = await emailjs.send(
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
+        templateParams,
+        emailjsConfig.publicKey
+      );
+
+      if (response.status === 200) {
         setSubmitted(true);
         setFormData({
           name: '',
@@ -106,6 +115,8 @@ function Contact() {
       setIsSubmitting(false);
     }
   };
+
+  const handleSubmit = handleNetlifySubmit;
 
   const bgColor = isDarkMode ? 'bg-gray-900' : 'bg-white';
   const textColor = isDarkMode ? 'text-white' : 'text-gray-900';
