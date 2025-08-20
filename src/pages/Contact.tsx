@@ -16,7 +16,6 @@ function Contact() {
 
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -26,29 +25,26 @@ function Contact() {
     }));
   };
 
-  const handleEmailJSSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setError('');
 
     try {
-      // Send email directly using EmailJS
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone || 'Not provided',
-        subject: formData.subject,
-        message: formData.message
-      };
+      // Submit to Netlify Forms (which will use your Hostinger email)
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          'name': formData.name,
+          'email': formData.email,
+          'phone': formData.phone,
+          'subject': formData.subject,
+          'message': formData.message
+        }).toString()
+      });
 
-      const response = await emailjs.send(
-        emailjsConfig.serviceId,
-        emailjsConfig.templateId,
-        templateParams,
-        emailjsConfig.publicKey
-      );
-
-      if (response.status === 200) {
+      if (response.ok) {
         setSubmitted(true);
         setFormData({
           name: '',
@@ -72,38 +68,46 @@ function Contact() {
     }
   };
 
-  const handleNetlifySubmit = (e: React.FormEvent) => {
+  const handleNetlifySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Let Netlify handle the form submission naturally
-    const form = e.target as HTMLFormElement;
-    
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form) as any).toString()
-    })
-    .then(() => {
-      setSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          'name': formData.name,
+          'email': formData.email,
+          'phone': formData.phone,
+          'subject': formData.subject,
+          'message': formData.message
+        }).toString()
       });
 
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 5000);
-    })
-    .catch(() => {
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 5000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Form submission failed:', error);
       alert('Failed to send message. Please try again or contact us directly at info@oakmar-terminalllc.com');
-    })
-    .finally(() => {
+    } finally {
       setIsSubmitting(false);
-    });
+    }
   };
 
   const bgColor = isDarkMode ? 'bg-gray-900' : 'bg-white';
@@ -211,10 +215,9 @@ function Contact() {
             <form 
               name="contact"
               method="POST"
-              action="/contact"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              onSubmit={handleNetlifySubmit}
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
               {/* Hidden field for Netlify */}
