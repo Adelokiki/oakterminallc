@@ -1,10 +1,28 @@
 const nodemailer = require('nodemailer');
 
 exports.handler = async (event, context) => {
+  // Handle CORS preflight requests
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS'
+      },
+      body: ''
+    };
+  }
+
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS'
+      },
       body: JSON.stringify({ error: 'Method not allowed' })
     };
   }
@@ -17,7 +35,26 @@ exports.handler = async (event, context) => {
     if (!name || !email || !subject || !message) {
       return {
         statusCode: 400,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS'
+        },
         body: JSON.stringify({ error: 'Missing required fields' })
+      };
+    }
+
+    // Check if environment variables are set
+    if (!process.env.HOSTINGER_EMAIL || !process.env.HOSTINGER_PASSWORD) {
+      console.error('Missing environment variables');
+      return {
+        statusCode: 500,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS'
+        },
+        body: JSON.stringify({ error: 'Server configuration error' })
       };
     }
 
@@ -27,16 +64,22 @@ exports.handler = async (event, context) => {
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.HOSTINGER_EMAIL, // Your Hostinger email
-        pass: process.env.HOSTINGER_PASSWORD // Your Hostinger email password
+        user: process.env.HOSTINGER_EMAIL,
+        pass: process.env.HOSTINGER_PASSWORD
+      },
+      tls: {
+        rejectUnauthorized: false
       }
     });
 
+    // Verify transporter configuration
+    await transporter.verify();
+
     // Email content
     const mailOptions = {
-      from: process.env.HOSTINGER_EMAIL, // Your Hostinger email
-      to: 'info@oakmar-terminalllc.com', // Where you want to receive emails
-      replyTo: email, // Customer's email for easy reply
+      from: process.env.HOSTINGER_EMAIL,
+      to: 'info@oakmar-terminalllc.com',
+      replyTo: email,
       subject: `New Contact Form Submission: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -65,14 +108,15 @@ exports.handler = async (event, context) => {
           
           <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
           <p style="color: #6b7280; font-size: 12px; text-align: center;">
-            This email was sent from the Oakmar Terminal contact form on your website.
+            This email was sent from the Oakmar Terminal contact form.
           </p>
         </div>
       `
     };
 
     // Send email
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully:', info.messageId);
 
     return {
       statusCode: 200,
