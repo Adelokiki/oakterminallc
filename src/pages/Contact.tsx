@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
-import emailjs from '@emailjs/browser';
-import { emailjsConfig } from '../config/emailjs';
-import emailjs from '@emailjs/browser';
-import { emailjsConfig } from '../config/emailjs';
 
 function Contact() {
   const { isDarkMode } = useTheme();
@@ -43,29 +39,8 @@ function Contact() {
         message: formData.message
       };
 
-      const response = await emailjs.send(
-        emailjsConfig.serviceId,
-        emailjsConfig.templateId,
-        templateParams,
-        emailjsConfig.publicKey
-      );
-
-      if (response.status === 200) {
-        setSubmitted(true);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: ''
-        });
-
-        setTimeout(() => {
-          setSubmitted(false);
-        }, 5000);
-      } else {
-        throw new Error('Form submission failed');
-      }
+      // This function is not being used, so we'll just throw an error
+      throw new Error('EmailJS not configured');
     } catch (error) {
       console.error('Form submission failed:', error);
       alert('Failed to send message. Please try again or contact us directly at info@oakmar-terminalllc.com');
@@ -115,8 +90,6 @@ function Contact() {
       setIsSubmitting(false);
     }
   };
-
-  const handleSubmit = handleNetlifySubmit;
 
   const bgColor = isDarkMode ? 'bg-gray-900' : 'bg-white';
   const textColor = isDarkMode ? 'text-white' : 'text-gray-900';
